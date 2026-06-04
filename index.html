@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Co. — Brittani</title>
+
+    <!-- Social sharing meta tags -->
+    <meta name="description" content="You have the vision. I build the background. Operations, infrastructure & people systems consulting — Detroit, MI.">
+    <meta property="og:title" content="Background Co. — Brittani">
+    <meta property="og:description" content="You have the vision. I build the background. Operations, infrastructure & people systems for service-based founders.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://backgroundco.co">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Background Co. — Brittani">
+    <meta name="twitter:description" content="You have the vision. I build the background.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #F8F7F4;
+            --ink: #1A1916;
+            --ink-mid: #5A5750;
+            --ink-light: #9A9790;
+            --rule: #D8D5CE;
+            --accent: #B89A72;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            background: #EDECEA;
+            min-height: 100%;
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 48px 20px;
+        }
+
+        /* ─── PAGE CARD ─── */
+        .page {
+            width: 100%;
+            max-width: 860px;
+            background: var(--bg);
+            box-shadow: 0 8px 60px rgba(0,0,0,0.10);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ─── BG WATERMARK ─── */
+        .page::before {
+            content: 'BG';
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 320px;
+            font-weight: 300;
+            color: rgba(26,25,22,0.028);
+            position: absolute;
+            right: -24px;
+            top: -40px;
+            letter-spacing: -0.02em;
+            pointer-events: none;
+            line-height: 1;
+            z-index: 0;
+            user-select: none;
+        }
+
+        .inner {
+            padding: 60px 80px 52px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            position: relative;
+            z-index: 1;
+            gap: 0;
+        }
+
+        /* ─── HEADER ─── */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .header-left { display: flex; flex-direction: column; gap: 7px; }
+
+        .brand-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 46px;
+            font-weight: 300;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink);
+            line-height: 1;
+        }
+
+        .brand-sub {
+            font-size: 9px;
+            font-weight: 500;
+            letter-spacing: 0.26em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+        }
+
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 6px;
+        }
+
+        .monogram {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 0.18em;
+            color: var(--ink);
+            line-height: 1;
+            border: 1px solid var(--rule);
+            padding: 6px 12px 4px;
+        }
+
+        .header-location {
+            font-size: 9px;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+        }
+
+        /* ─── INTRO ─── */
+        .intro {
+            padding: 26px 0;
+            border-bottom: 1px solid var(--rule);
+            display: grid;
+            grid-template-columns: 1fr 1.7fr;
+            gap: 52px;
+            align-items: start;
+        }
+
+        .tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--ink);
+            line-height: 1.55;
+        }
+
+        .intro-body {
+            font-size: 12.5px;
+            font-weight: 300;
+            line-height: 1.88;
+            color: var(--ink-mid);
+            padding-top: 4px;
+        }
+
+        .intro-body strong {
+            font-weight: 500;
+            color: var(--ink);
+        }
+
+        /* ─── SECTION LABEL ─── */
+        .section-label {
+            font-size: 8.5px;
+            font-weight: 600;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            margin-bottom: 18px;
+        }
+
+        /* ─── SERVICES ─── */
+        .services {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 36px;
+        }
+
+        .service-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 17px;
+            font-weight: 500;
+            color: var(--ink);
+            line-height: 1.3;
+            margin-bottom: 4px;
+        }
+
+        .service-rate {
+            font-size: 9.5px;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 9px;
+        }
+
+        .service-desc {
+            font-size: 11.5px;
+            font-weight: 300;
+            color: var(--ink-mid);
+            line-height: 1.78;
+        }
+
+        /* ─── BOTTOM GRID ─── */
+        .bottom-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 52px;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .who-body {
+            font-size: 11.5px;
+            font-weight: 300;
+            color: var(--ink-mid);
+            line-height: 1.85;
+        }
+
+        .case-study { margin-bottom: 14px; }
+        .case-study:last-child { margin-bottom: 0; }
+
+        .case-title {
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--ink);
+            margin-bottom: 4px;
+        }
+
+        .case-body {
+            font-size: 11.5px;
+            font-weight: 300;
+            color: var(--ink-mid);
+            line-height: 1.78;
+        }
+
+        /* ─── CONNECT / FORM SECTION ─── */
+        .connect {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--rule);
+            display: grid;
+            grid-template-columns: 1fr 1.8fr;
+            gap: 52px;
+            align-items: start;
+        }
+
+        .connect-left {}
+
+        .connect-intro {
+            font-size: 12px;
+            font-weight: 300;
+            color: var(--ink-mid);
+            line-height: 1.85;
+            margin-top: 4px;
+        }
+
+        .connect-intro em {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 14px;
+            color: var(--ink);
+        }
+
+        /* ─── FORM ─── */
+        /* Replace YOUR_APPS_SCRIPT_URL in the JavaScript below
+           with your deployed Google Apps Script Web App URL */
+        .inquiry-form {}
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px 28px;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .form-field label {
+            font-size: 7.5px;
+            font-weight: 600;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+        }
+
+        .form-field input,
+        .form-field select {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--rule);
+            padding: 6px 0;
+            font-family: 'Jost', sans-serif;
+            font-size: 12px;
+            font-weight: 300;
+            color: var(--ink);
+            outline: none;
+            width: 100%;
+            -webkit-appearance: none;
+            appearance: none;
+            border-radius: 0;
+            transition: border-color 0.2s;
+        }
+
+        .form-field input::placeholder { color: var(--ink-light); }
+
+        .form-field input:focus,
+        .form-field select:focus { border-bottom-color: var(--ink); }
+
+        .form-field select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%239A9790' stroke-width='1.2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 2px center;
+            padding-right: 18px;
+            cursor: pointer;
+        }
+
+        .form-bottom {
+            margin-top: 16px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .form-status {
+            font-size: 10px;
+            font-weight: 300;
+            color: var(--ink-light);
+            letter-spacing: 0.05em;
+            display: none;
+        }
+
+        .submit-btn {
+            background: var(--ink);
+            color: var(--bg);
+            border: none;
+            padding: 11px 30px;
+            font-family: 'Jost', sans-serif;
+            font-size: 9px;
+            font-weight: 500;
+            letter-spacing: 0.26em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.2s, opacity 0.2s;
+        }
+
+        .submit-btn:hover { background: var(--ink-mid); }
+        .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        /* ─── SUCCESS MESSAGE ─── */
+        .success-msg {
+            display: none;
+            padding: 28px 0 8px;
+        }
+
+        .success-msg .success-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--ink);
+            margin-bottom: 8px;
+        }
+
+        .success-msg .success-body {
+            font-size: 12px;
+            font-weight: 300;
+            color: var(--ink-mid);
+            line-height: 1.85;
+        }
+
+        /* ─── FOOTER ─── */
+        .footer {
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .footer-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            color: var(--ink);
+            margin-bottom: 3px;
+        }
+
+        .footer-title {
+            font-size: 8px;
+            font-weight: 400;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+        }
+
+        .contact-items {
+            display: flex;
+            gap: 28px;
+            align-items: flex-end;
+        }
+
+        .contact-item { text-align: right; }
+
+        .contact-label {
+            display: block;
+            font-size: 7.5px;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            margin-bottom: 3px;
+        }
+
+        .contact-value {
+            font-size: 11px;
+            font-weight: 300;
+            color: var(--ink-mid);
+            letter-spacing: 0.04em;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 780px) {
+            body { padding: 0; }
+            .page { box-shadow: none; }
+            .inner { padding: 40px 28px 36px; }
+            .page::before { font-size: 160px; right: -10px; top: -20px; }
+            .brand-name { font-size: 32px; }
+            .monogram { font-size: 20px; padding: 5px 10px 3px; }
+            .intro { grid-template-columns: 1fr; gap: 16px; }
+            .services-grid { grid-template-columns: 1fr; gap: 28px; }
+            .bottom-grid { grid-template-columns: 1fr; gap: 28px; }
+            .connect { grid-template-columns: 1fr; gap: 20px; }
+            .form-grid { grid-template-columns: 1fr; gap: 16px; }
+            .form-bottom { justify-content: flex-start; }
+            .footer { flex-direction: column; gap: 20px; align-items: flex-start; }
+            .contact-items { gap: 20px; flex-wrap: wrap; }
+            .contact-item { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+<div class="inner">
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-left">
+            <div class="brand-name">Background Co.</div>
+            <div class="brand-sub">Operations · Infrastructure · People Systems</div>
+        </div>
+        <div class="header-right">
+            <div class="monogram">BG</div>
+            <div class="header-location">Detroit, Michigan</div>
+        </div>
+    </header>
+
+    <!-- INTRO -->
+    <div class="intro">
+        <div class="tagline">You have<br>the vision.<br>I build<br>the background.</div>
+        <div class="intro-body">
+            Behind every business that runs well, there's infrastructure most people never see — the systems, documents, tools, and processes working quietly in the background. I build it from the ground up, drawing on a career in <strong>People Analytics and HR operations</strong> to design systems that are data-backed and built around how people actually work. You stay focused on your vision. I make sure everything behind it is ready to run.
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="services">
+        <div class="section-label">Services</div>
+        <div class="services-grid">
+
+            <div class="service-item">
+                <div class="service-name">Launch Build</div>
+                <div class="service-rate">Starting at $5,000 &nbsp;·&nbsp; Flat Fee</div>
+                <div class="service-desc">Full operational infrastructure for a new business in 4–6 weeks. Tech stack, payment systems, intake forms, automations, program documents, and email templates — everything needed to open your doors.</div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-name">Operations Audit + Rebuild</div>
+                <div class="service-rate">Starting at $2,500 &nbsp;·&nbsp; Flat Fee</div>
+                <div class="service-desc">For founders already running but operating without systems. I assess what is broken, rebuild what needs it, and document everything so your business runs without you holding it together in your head.</div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-name">Fractional Ops Director</div>
+                <div class="service-rate">Starting at $1,500 &nbsp;·&nbsp; Monthly</div>
+                <div class="service-desc">Ongoing operational support on retainer. New program builds, systems maintenance, HR process design, and strategic coordination. 10–15 hours per month. Available post-launch or as a standalone engagement.</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- BOTTOM GRID -->
+    <div class="bottom-grid">
+
+        <div>
+            <div class="section-label">Who I Work With</div>
+            <div class="who-body">
+                Service-based founders, solopreneurs, and small teams in wellness, fitness, consulting, and community-centered industries. You have the expertise and the clients. You just need someone to build what makes it all run — quietly, precisely, and without adding to your plate.
+                <br><br>
+                Particular fluency working with Black women-owned businesses and mission-driven organizations building operational infrastructure for the first time.
+            </div>
+        </div>
+
+        <div>
+            <div class="section-label">Recent Work</div>
+
+            <div class="case-study">
+                <div class="case-title">The Sisters' Couch Wellness Hub &mdash; Detroit, MI</div>
+                <div class="case-body">Built the complete operational background for a 6-program wellness hub — tech stack, program agreements, landing pages, intake forms, payment automations, and a full 15-week launch timeline. Soft opening June 2026.</div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-title">Fitness Brand Build &mdash; Royal Oak, MI</div>
+                <div class="case-body">Designed and deployed full digital and operational infrastructure for a solo fitness entrepreneur: web presence, payment systems, automations, liability documentation, event coordination, and end-to-end booking workflow.</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CONNECT / FORM -->
+    <div class="connect">
+
+        <div class="connect-left">
+            <div class="section-label">Start a Conversation</div>
+            <div class="connect-intro">
+                Fill out the form and I'll be in touch within 48 hours to learn more about your business and where you need support.
+            </div>
+        </div>
+
+        <div class="connect-right">
+
+            <!-- Inquiry Form -->
+            <!-- JavaScript below submits this to your Google Apps Script Web App -->
+            <form class="inquiry-form" id="inquiryForm" novalidate>
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="business">Business Name</label>
+                        <input type="text" id="business" name="business" placeholder="Your business">
+                    </div>
+                    <div class="form-field">
+                        <label for="service">I'm Interested In</label>
+                        <select id="service" name="service" required>
+                            <option value="" disabled selected>Select a service</option>
+                            <option>Launch Build</option>
+                            <option>Operations Audit + Rebuild</option>
+                            <option>Fractional Ops Director</option>
+                            <option>Not sure yet</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+                </div>
+                <div class="form-bottom">
+                    <span class="form-status" id="formStatus"></span>
+                    <button type="submit" class="submit-btn" id="submitBtn">Send Inquiry</button>
+                </div>
+            </form>
+
+            <!-- Success Message (shown after submission) -->
+            <div class="success-msg" id="successMsg">
+                <div class="success-title">Thank you.</div>
+                <div class="success-body">
+                    Your inquiry has been received. I'll be in touch within 48 hours.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div>
+            <div class="footer-name">Brittani</div>
+            <div class="footer-title">Founder, Background Co.</div>
+        </div>
+        <div class="contact-items">
+            <div class="contact-item">
+                <span class="contact-label">Email</span>
+                <span class="contact-value">brittani@backgroundco.co</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">LinkedIn</span>
+                <a href="https://www.linkedin.com/in/brittaniwhitney/" target="_blank" style="color: var(--ink-mid); text-decoration: none; font-size: 11px; font-weight: 300; letter-spacing: 0.04em;">linkedin.com/in/brittaniwhitney</a>
+            </div>
+        </div>
+    </footer>
+
+</div>
+</div>
+
+<script>
+    // ─────────────────────────────────────────────
+    // STEP 1: Replace this URL with your deployed
+    // Google Apps Script Web App URL
+    // ─────────────────────────────────────────────
+    const SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL';
+
+    document.getElementById('inquiryForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const form      = document.getElementById('inquiryForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const status    = document.getElementById('formStatus');
+        const successMsg = document.getElementById('successMsg');
+
+        // Basic validation
+        const name    = document.getElementById('name').value.trim();
+        const email   = document.getElementById('email').value.trim();
+        const service = document.getElementById('service').value;
+
+        if (!name || !email || !service) {
+            status.textContent  = 'Please fill in all required fields.';
+            status.style.display = 'block';
+            return;
+        }
+
+        // Loading state
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled    = true;
+        status.style.display  = 'none';
+
+        const formData = new URLSearchParams({
+            name:     name,
+            business: document.getElementById('business').value.trim(),
+            service:  service,
+            email:    email
+        });
+
+        try {
+            // Google Apps Script requires no-cors mode
+            // Data is written to your sheet even though the response is opaque
+            await fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode:   'no-cors',
+                body:   formData
+            });
+
+            // Show success
+            form.style.display       = 'none';
+            successMsg.style.display = 'block';
+
+        } catch (err) {
+            submitBtn.textContent = 'Send Inquiry';
+            submitBtn.disabled    = false;
+            status.textContent    = 'Something went wrong. Please email me directly.';
+            status.style.display  = 'block';
+        }
+    });
+</script>
+
+</body>
+</html>
